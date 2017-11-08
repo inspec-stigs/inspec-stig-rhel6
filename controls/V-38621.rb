@@ -43,7 +43,7 @@ If this is not the case, this is a finding.
 # START_DESCRIBE
   tag 'ntp','ntp.conf'
   options = {
-    assignment_re: /^(.*?)\s+(.*)$/
+    assignment_regex: /^(.*?)\s+(.*)$/
   }
   describe parse_config_file('/etc/ntp.conf',options) do
     its('server') { should match /.*/ }

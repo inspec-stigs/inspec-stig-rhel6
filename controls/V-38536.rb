@@ -40,7 +40,7 @@ If the system is not configured to audit account changes, this is a finding.
 
 # START_DESCRIBE
   ['/etc/group','/etc/passwd','/etc/gshadow','/etc/shadow','/etc/security/opasswd'].each do |file|
-    describe auditd_rules do
+    describe auditd do
       its('lines') { should include("-w #{file} -p wa -k audit_account_changes") }
     end
   end

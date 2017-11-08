@@ -45,7 +45,7 @@ If either command lacks output, this is a finding.
 '
 
 # START_DESCRIBE
-  describe auditd_rules.syscall('ftruncate').action do
+  describe auditd.syscall('ftruncate').action do
     it { should eq(['always']) }
   end
 # END_DESCRIBE

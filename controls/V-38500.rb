@@ -34,7 +34,7 @@ If any account other than root has a UID of 0, this is a finding.
 # START_DESCRIBE
   describe passwd.uids(0) do
     its('users') { should cmp 'root' }
-    its('count') { should eq 1 }
+    its('entries.length') { should eq 1 }
   end
 # END_DESCRIBE
 

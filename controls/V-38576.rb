@@ -35,7 +35,7 @@ If it does not, this is a finding.
 
 # START_DESCRIBE
   options = {
-    assignment_re:  /^(.*?)\s+(.*)$/,
+    assignment_regex:  /^(.*?)\s+(.*)$/,
   }
   describe parse_config_file('/etc/login.defs', options) do
    its('ENCRYPT_METHOD') { should eq 'SHA512' }

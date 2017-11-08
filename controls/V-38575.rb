@@ -55,7 +55,7 @@ If no line is returned, this is a finding.
 
 # START_DESCRIBE
   ['rmdir','unlink','unlinkat','rename','renameat'].each do |syscall|
-    describe auditd_rules.syscall(syscall).action do
+    describe auditd.syscall(syscall).action do
       it { should eq(['always']) }
     end
   end

@@ -34,7 +34,7 @@ If there is no output, this is a finding.
 '
 
 # START_DESCRIBE
-  describe auditd_rules do
+  describe auditd do
     its('lines') { should include("-w /etc/sudoers -p wa -k actions") }
   end
 # END_DESCRIBE

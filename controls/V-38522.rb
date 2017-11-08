@@ -45,7 +45,7 @@ If the system is not configured to audit time changes, this is a finding.
 '
 
 # START_DESCRIBE
-describe auditd_rules.syscall('settimeofday').action do
+describe auditd.syscall('settimeofday').action do
   it { should eq(['always']) }
 end
 # END_DESCRIBE

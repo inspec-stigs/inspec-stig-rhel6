@@ -39,14 +39,14 @@ If the system is not configured to audit changes of the network configuration, t
 '
 
 # START_DESCRIBE
-  describe auditd_rules.syscall('sethostname').action do
+  describe auditd.syscall('sethostname').action do
     it { should eq(['always']) }
   end
-  describe auditd_rules.syscall('setdomainname').action do
+  describe auditd.syscall('setdomainname').action do
     it { should eq(['always']) }
   end
   ['/etc/issue','/etc/issue.net','/etc/hosts','/etc/sysconfig/network'].each do |file|
-    describe auditd_rules do
+    describe auditd do
       its('lines') { should include("-w #{file} -p wa -k audit_network_modifications") }
     end
   end

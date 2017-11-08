@@ -36,7 +36,7 @@ If the system is not configured to audit time changes, this is a finding.
 '
 
 # START_DESCRIBE
-describe auditd_rules do
+describe auditd do
   its('lines') { should include("-w /etc/localtime -p wa -k audit_time_rules") }
 end
 # END_DESCRIBE

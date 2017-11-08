@@ -79,7 +79,7 @@ It should be the case that all relevant setuid / setgid programs have a line in 
     "/bin/ping6",
   ]
   setuid_tools.each do |file|
-    describe auditd_rules do
+    describe auditd do
       its('lines') { should include("-a always,exit -S all -F path=#{file} -F perm=x -F auid>=500 -F auid!=-1 -F key=privileged") }
     end
   end

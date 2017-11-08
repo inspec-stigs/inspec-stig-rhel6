@@ -41,7 +41,7 @@ If no lines are returned, this is a finding.
   tag 'pam','ldap','pam_ldap.conf'
   only_if { file('/etc/pam_ldap.conf').exist? }
   options = {
-    assignment_re: /^(.*?)\s+(.*)$/
+    assignment_regex: /^(.*?)\s+(.*)$/
   }
   describe parse_config_file('/etc/pam_ldap.conf',options) do
     its('ssl') { should eq 'start_tls' }

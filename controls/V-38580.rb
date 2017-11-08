@@ -57,12 +57,12 @@ If no line is returned for any of these commands, this is a finding.
     '-w /sbin/rmmod -p x -k modules',
     '-w /sbin/modprobe -p x -k modules'
   ].each do |line|
-    describe auditd_rules do
+    describe auditd do
       its('lines') { should include(line) }
     end
   end
   ['init_module','delete_module'].each do |syscall|
-    describe auditd_rules.syscall(syscall).action do
+    describe auditd.syscall(syscall).action do
       it { should eq(['always']) }
     end
   end

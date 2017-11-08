@@ -34,7 +34,7 @@ If the system is not configured to audit attempts to change the MAC policy, this
 '
 
 # START_DESCRIBE
-  describe auditd_rules do
+  describe auditd do
     its('lines') { should include("-w /etc/selinux/ -p wa -k MAC-policy") }
   end
 # END_DESCRIBE

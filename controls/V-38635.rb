@@ -46,7 +46,7 @@ If the system is not configured to audit time changes, this is a finding.
 
 # START_DESCRIBE
   tag 'auditd','audit.rules','adjtimex','syscall'
-  describe auditd_rules.syscall('adjtimex').action do
+  describe auditd.syscall('adjtimex').action do
     it { should eq(['always']) }
   end
 # END_DESCRIBE

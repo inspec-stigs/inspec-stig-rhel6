@@ -43,7 +43,7 @@ If the system is not configured to audit time changes, this is a finding.
 
 # START_DESCRIBE
 only_if { os[:arch] == "x86_32" }
-  describe auditd_rules.syscall('stime').action do
+  describe auditd.syscall('stime').action do
     it { should eq(['always']) }
   end
 # END_DESCRIBE

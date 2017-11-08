@@ -43,7 +43,7 @@ If the system is not configured to audit permission changes, this is a finding.
 '
 
 # START_DESCRIBE
-  describe auditd_rules.syscall('chmod').action do
+  describe auditd.syscall('chmod').action do
     it { should eq(['always']) }
   end
 # END_DESCRIBE

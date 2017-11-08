@@ -43,7 +43,7 @@ If no line is returned, this is a finding.
 '
 
 # START_DESCRIBE
-  describe auditd_rules.syscall('fsetxattr').action do
+  describe auditd.syscall('fsetxattr').action do
     it { should eq(['always']) }
   end
 # END_DESCRIBE
